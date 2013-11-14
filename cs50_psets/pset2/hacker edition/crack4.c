@@ -1,0 +1,36 @@
+# define _XOPEN_SOURCE
+# include <unistd.h>
+# include <stdio.h>
+# include <string.h>
+# include <strings.h>
+
+int main( int argc , char *argv[] )
+{
+  int i;
+  char x[14],salt[3],str[30];
+  if(argc != 2 || strlen(argv[1]) != 13)
+  {
+    printf( "bad input !!\n" );
+    return 1;
+  }
+  salt[0]=argv[1][0];
+  salt[1]=argv[1][1];
+  FILE *f;
+  f=fopen( "words" , "r" );
+  while(!feof(f))
+  {
+    fgets( str,  30 , f );
+    str[8]='\0';
+    *index(str, '\n')='\0'; 
+    strcpy( x , crypt( str , salt ) );
+    //printf( "%s  " , str );
+    //printf( "%s  " , x );
+    if(strcmp( x , argv[1] ) == 0 )
+      {
+        printf( "%s" , str );
+        break;
+      } 
+  }
+  fclose(f);
+  return 0;
+}
