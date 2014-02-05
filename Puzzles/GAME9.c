@@ -107,17 +107,17 @@ main()
     disp();
     if(check())
     {
-	printf("\n\nGame Over");
+	printf("\n\n\t\t\t\t\t\t\t\tGame Over");
 	break;
     }
-    printf("\nMove the blank tile (w/a/s/d)(e to exit) : ");
+    printf("\n\t\t\t\t\tMove the blank tile (w/a/s/d)(e to exit) : ");
     scanf(" %c", &mov);
     while(1)
     {
       if(mov == 'w' ||  mov == 'a' || mov == 's' || mov == 'd' || mov == 'e')
         break;
-      printf("\nIllegal move!!");
-      printf("\nPlay your move(w/a/s/d)(e to exit) : ");
+      printf("\n\t\t\t\t\t\t\t\tIllegal move!!");
+      printf("\n\t\t\t\t\tPlay your move(w/a/s/d)(e to exit) : ");
       scanf(" %c", &mov);
     }
     if(mov == 'e')
