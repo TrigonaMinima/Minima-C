@@ -42,6 +42,8 @@ int main(int argc, char const *argv[])
     count a;
     a.getC();
     a.~count();
+    cout << sizeof a << endl ;
+
     // count a, b;
     // {
     //     count e, f;
