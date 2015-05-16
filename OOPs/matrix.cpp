@@ -61,6 +61,8 @@ public:
 
     friend matrix operator*(matrix m1, matrix m2);
 
+    friend ostream operator<<(ostream& obj, matrix m);
+
     void print()
     {
         for(int i = 0; i < size; i++)
@@ -106,6 +108,20 @@ matrix matrix::operator++(int)
     return m;
 }
 
+ostream matrix::operator<<(ostream& obj, matrix m)
+{
+    for(int i = 0; i < m.size; i++)
+    {
+        for(int j = 0; j < m.size; j++)
+            obj << setw(3) << m.mat[i][j] << " ";
+        obj << endl;
+    }
+    obj << "++++\n";
+    return obj;
+}
+
+
+
 int main()
 {
     set_new_handler(out_of_memory);
@@ -128,6 +144,7 @@ int main()
     m2++;
     m2.print();
 
+    cout << m4;
 
     return 0;
 }
