@@ -1,5 +1,5 @@
 /*
-* Count Sort (Bucket is very similar)
+* Count Sort (Bucket Sort is very similar)
 */
 
 # include <iostream>
