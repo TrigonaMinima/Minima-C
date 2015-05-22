@@ -18,22 +18,31 @@ void welcome_screen()
 }
 
 
+class record
+{
+    int age;
+    string name, occupation, address1, email, faxadd, phone1, phone2;
+public:
+    record();
+    ~record();
+
+};
+
 class directory
 {
-    int record, age;
-    int phone1[10], phone2[10];
-    string name, occupation, address1, email, faxadd[25];
+    int record_id;
+    record r;
 public:
     void menu();
-    void add_record();
-    void delete_record();
-    void modifify_record();
-    char check(string);
-    void view_record();
-    void search_record();
-    void init();
-    void view1();
-    int  no_of_records();
+    // void add_record();
+    // void delete_record();
+    // void modifify_record();
+    // char check(string);
+    // void view_record();
+    // void search_record();
+    // void init();
+    // void view1();
+    // int  no_of_records();
 };
 
 
