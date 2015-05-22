@@ -17,27 +17,29 @@ void welcome_screen()
     return;
 }
 
-// class directory
-// {
-//     int record, age;
-//     long pn1, pn2;
-//     char name[20], occupation[25], address1[75], address2[75], emailadd[25];
-//     char faxadd[25], check(char *);
-// public:
-//     void menu();
-//     void addition();
-//     void init();
-//     void delette();
-//     void view1();
-//     void modification();
-//     void view();
-//     void search();
-//     int  no_of_records();
-// } obj;
+
+class directory
+{
+    int record, age;
+    int phone1[10], phone2[10];
+    string name, occupation, address1, email, faxadd[25];
+public:
+    void menu();
+    void add_record();
+    void delete_record();
+    void modifify_record();
+    char check(string);
+    void view_record();
+    void search_record();
+    void init();
+    void view1();
+    int  no_of_records();
+};
+
 
 // void  directory :: menu()
 // {
-//     system("cls");
+//     system("clear");
 //     int ch;
 //     cout << "*******MENU*********\n";
 //     cout << endl;
@@ -114,7 +116,7 @@ void welcome_screen()
 
 // void directory :: init()  // ENTERING THE DETAILS
 // {
-//     system("cls");
+//     system("clear");
 //     char ch;
 //     cout << " ***********ADDITION*********** ";
 //     cin.get(ch);
@@ -142,7 +144,7 @@ void welcome_screen()
 // void  directory :: delette()      //DELETION OF RECORDS
 // {
 //     start:
-//     system("cls");
+//     system("clear");
 //     cout << "**********DELETION**********";
 //     int n;
 //     fstream fin;
@@ -234,7 +236,7 @@ void welcome_screen()
 // void directory :: modification() //TO MODIFY ANY DATA IN  THE RECORD IF NECESSARY
 // {
 //  start:
-//  system("cls");
+//  system("clear");
 //  cout << "*********MODIFICATION**********";
 //  fstream fin, fout;
 //  fin.open("addbuk.txt", ios :: binary |ios :: in);
@@ -404,7 +406,7 @@ void welcome_screen()
 //         cin.get();
 //         return;
 //     }
-//     system("cls");
+//     system("clear");
 //     n=no_of_records();
 //     for(j = 0; j < n; j++)
 //     {
@@ -455,7 +457,7 @@ void welcome_screen()
 //         cin.get();
 //         return;
 //     }
-//     system("cls");
+//     system("clear");
 //     cout << "**********SEARCHING********** ";
 //     cout << "\nENTER PHONE NUMBER TO BE SEARCHED : ";
 //     long pn;
@@ -500,9 +502,11 @@ void welcome_screen()
 //     return n;
 // }
 
+
 int main()
 {
+    directory dir;
     welcome_screen();
-    // obj.menu();
+    // dir.menu();
     return(0);
 }
