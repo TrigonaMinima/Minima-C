@@ -2,6 +2,8 @@
 # include <stdlib.h>
 # include <string.h>
 
+using namespace std;
+
 class record
 {
     int age;
@@ -37,3 +39,5 @@ record :: record()
     gets(faxadd);
     return;
 }
+
+

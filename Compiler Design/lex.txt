@@ -1,0 +1,43 @@
+/*** Definition section ***/
+%{
+/* C code to be copied verbatim */
+#include <stdio.h>
+int ints = 0;
+int strings = 0;
+int junk = 0;
+%}
+/* This tells flex to read only one input file */
+%option noyywrap
+
+%%
+    /*** Rules section ***/
+    /* [0-9]+ will match all the numbers. */
+[0-9]+  {
+            printf("Saw an integer\t: %s\n", yytext);
+            ints++;
+            }
+    /* [a-zA-Z]+ will match all the alphabetic words. */
+[a-zA-Z]+   {
+            printf("Saw a string\t: %s\n", yytext);
+            strings++;
+            }
+    /* [ \t\n]+ will match all the blank spaces. */
+[ \t\n]+   {}
+    /* [^a-zA-Z0-9]+ will match all the characters except alphabets and numbers. */
+[^a-zA-Z0-9]+    {
+                printf("Saw junk\t: %s\n", yytext);
+                junk++;
+                }
+%%
+/*** C Code section ***/
+
+int main(void)
+{
+    /* Call the lexer, then quit. */
+    printf("Lexer Results:\n\n");
+    yylex();
+    printf("Total ints encountered\t\t: %d\n", ints);
+    printf("Total strings encountered\t: %d\n", strings);
+    printf("Total junk encountered\t\t: %d\n", junk);
+    return 0;
+}

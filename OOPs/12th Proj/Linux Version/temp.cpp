@@ -1,154 +1,82 @@
-# include <iostream>
-# include <stdlib.h>
-# include <string.h>
-// # include <stdio.h>
-
-using namespace std;
-
-void welcome_screen()
+void  directory :: menu()
 {
     system("clear");
-    cout << "*********************** WELCOME ***********************\n\n";
-    cout << " STUDENT DATA MANAGEMENT SOFTWARE\n";
-    cout << " Made by:";
-    cout << " SHIVAM RANA\n\n\n\n\n\n\n\n\n\n\n\n\n";
-    cout << " *Press enter to continue*";
-    cin.get();
-    return;
+    int ch;
+    cout << "DATA MANAGEMENT SOFTWARE\n";
+    cout << "*******MENU*********\n\n";
+    cout << "1: Addition\n";
+    cout << "2: Deletion\n";
+    cout << "3: Modification\n";
+    cout << "4: View\n";
+    cout << "5: Search\n";
+    cout << "6: No Of Records\n";
+    cout << "7: Exit\n\n";
+    cout << "Choice- ";
+    cin >> ch;
+    switch(ch)
+    {
+        case 1:
+            add_record();
+            break;
+        // case 2 :
+        //     obj.delette();
+        //     break;
+        // case 3:
+        //     obj.modification();
+        //     break;
+        // case 4:
+        //     obj.view();
+        //     break;
+        // case 5:
+        //     obj.search();
+        //     break;
+        // case 6:
+        //     obj.no_of_records();
+        //     int c;
+        //     cout << "\n\n\n\nDo you want to return to the menu(1) or exit(2) ??????? ";
+        //     cin >> c;
+        //     switch(ch)
+        //     {
+        //         case 1:
+        //             menu();
+        //             break;
+        //         case 2:
+        //             exit(0);
+        //     }
+        //     break;
+        case 7:
+            exit(0);
+    }
+}
+
+void directory :: add_record()
+{
+    record new_;
+    // start:
+    // ofstream fout;
+    // fout.open("addbuk.txt", ios :: binary | ios :: app);
+    // init();
+    // fout.write((char*)&obj, sizeof(obj));
+    // fout.close();
+    // char l;
+    // cout << "Want to enter more ?? (y/n)";
+    // cin >> l;
+    // if(l == 'y')
+    //     goto start;
+    // int c;
+    // cout << "Do you want to return to the menu(1) or exit(2)? ";
+    // cin >> c;
+    // switch(c)
+    // {
+    //     case 1:
+    //         menu();
+    //         break;
+    //     case 2:
+    //         exit(0);
+    // }
 }
 
 
-class record
-{
-    int age;
-    string name, occupation, address1, email, faxadd, phone1, phone2;
-public:
-    record();
-    ~record();
-
-};
-
-class directory
-{
-    int record_id;
-    record r;
-public:
-    void menu();
-    // void add_record();
-    // void delete_record();
-    // void modifify_record();
-    // char check(string);
-    // void view_record();
-    // void search_record();
-    // void init();
-    // void view1();
-    // int  no_of_records();
-};
-
-
-// void  directory :: menu()
-// {
-//     system("clear");
-//     int ch;
-//     cout << "*******MENU*********\n";
-//     cout << endl;
-//     cout << "1: ADDITION\n";
-//     cout << "2: DELETION\n";
-//     cout << "3: MODIFICATION\n";
-//     cout << "4: VIEW\n";
-//     cout << "5: SEARCH\n";
-//     cout << "6: NO OF RECORDS\n";
-//     cout << "7: EXIT\n";
-//     // ch=getch();
-//     cin >> ch;
-//     switch(ch)
-//     {
-//         case 1:
-//             obj.addition();
-//             break;
-//         case 2 :
-//             obj.delette();
-//             break;
-//         case 3:
-//             obj.modification();
-//             break;
-//         case 4:
-//             obj.view();
-//             break;
-//         case 5:
-//             obj.search();
-//             break;
-//         case 6:
-//             obj.no_of_records();
-//             int c;
-//             cout << "\n\n\n\nDo you want to return to the menu(1) or exit(2) ??????? ";
-//             cin >> c;
-//             switch(ch)
-//             {
-//                 case 1:
-//                     menu();
-//                     break;
-//                 case 2:
-//                     exit(0);
-//             }
-//             break;
-//         case 7:
-//             exit(0);
-//     }
-// }
-
-// void directory :: addition()  //ADDING  INFORMATION
-// {
-//     start:
-//     ofstream fout;
-//     fout.open("addbuk.txt", ios :: binary | ios :: app);
-//     init();
-//     fout.write((char*)&obj, sizeof(obj));
-//     fout.close();
-//     char l;
-//     cout << "Want to enter more ?? (y/n)";
-//     cin >> l;
-//     if(l == 'y')
-//         goto start;
-//     int c;
-//     cout << "Do you want to return to the menu(1) or exit(2)? ";
-//     cin >> c;
-//     switch(c)
-//     {
-//         case 1:
-//             menu();
-//             break;
-//         case 2:
-//             exit(0);
-//     }
-// }
-
-// void directory :: init()  // ENTERING THE DETAILS
-// {
-//     system("clear");
-//     char ch;
-//     cout << " ***********ADDITION*********** ";
-//     cin.get(ch);
-//     cout << "\n ENTER NAME\t\t: ";
-//     cin.getline(name, 20);
-//     cout << "\n ENTER THE OCCUPATION\t: ";
-//     cin.getline(occupation, 20);
-//     cout << "\n ENTER HOUSE ADDRESS\t: ";
-//     cin.getline(address1, 50);
-//     cout << "\n ENTER HOUSE PHONE NUMBER\t: ";
-//     cin >> obj.pn1;
-//     cin.get(ch);
-//     cout << "\n ENTER OFFICE ADDRESS\t: ";
-//     cin.getline(address2, 50);
-//     cout << "\n ENTER OFFICE PHONE NUMBER\t: ";
-//     cin >> pn2;
-//     cin.get(ch);
-//     cout << "\n ENTER EMAIL ADDRESS\t: ";
-//     cin.getline(emailadd, 25);
-//     cout << "\n ENTER FAX NUMBER\t: ";
-//     gets(faxadd);
-//     return;
-// }
 
 // void  directory :: delette()      //DELETION OF RECORDS
 // {
@@ -510,12 +438,3 @@ public:
 //     cout << n;
 //     return n;
 // }
-
-
-int main()
-{
-    directory dir;
-    welcome_screen();
-    // dir.menu();
-    return(0);
-}
