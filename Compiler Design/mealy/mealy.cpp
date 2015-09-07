@@ -98,17 +98,23 @@ void check_validity(mealy inp, string input)
         if(!exists)
         {
             cout << "|\t" << current << "\t|   "<< input[i] << "   |   ";
-            current = inp.table[current][string(1, input[i])]["state"];
             output = inp.table[current][string(1, input[i])]["out"];
+            if (output == "-1")
+            {
+                cout << "\nInput symbol \"" << input[i] << "\" at state "
+                << current << " is not recognized!!";
+            }
+            current = inp.table[current][string(1, input[i])]["state"];
             cout << output << "    |     " << current << "     |\n";
             i++;
-            if (i == size)
+            if(i == size)
                 cout << " --------------- ------- -------- ------------ " << endl;
         }
         else
         {
             cout << " --------------- ------- -------- ------------ " << endl;
-            cout << "\nInput symbol \"" << input[i] << "\" not recognized!!";
+            cout << "\nInput symbol \"" << input[i] << "\" at state \""
+            << current << "\" is not recognized!!" << endl;
             break;
         }
     }
