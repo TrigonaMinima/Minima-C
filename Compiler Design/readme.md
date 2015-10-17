@@ -6,7 +6,7 @@ Compiler Design Lab
 3. [DFA](#dfa)
 4. [Mealy Machine](#mealy)
 5. [Moore Machine](#moore)
-6. NFA to DFA
+6. [NFA to DFA](#nfa2dfa)
 
 
 ## <a name="dfa"></a> Deterministic Finite Automaton
@@ -16,6 +16,7 @@ Input Structure:
 ```
 initial state
 distinct states
+output states
 distinct inputs
 output(i) for each input on state
 ```
@@ -112,3 +113,32 @@ The dictionary which is created in memory.
     }
 }
 ```
+
+## <a name="nfa2dfa"></a> NFA to DFA Conversion
+
+Input Structure:
+
+```
+initial state
+distinct states
+output states
+distinct inputs
+output(i) for each input on state
+```
+
+The dictionary which is created in memory.
+
+```
+{
+    "q1": {
+        "0": <state>,
+        "1": <state>
+    },
+    "q2": {
+        "0": <state>,
+        "1": <state>
+    }
+}
+```
+
+
