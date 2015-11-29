@@ -17,7 +17,7 @@ GLint SCREEN_BPP = 32;
 SDL_Surface *surface;
 
 // Number of fireworks
-const int FIREWORKS = 15;
+const int FIREWORKS = 10;
 // Number of particles per firework
 const int FIREWORK_PARTICLES = 50;
 
@@ -285,7 +285,7 @@ void PlaySound()
 {
         int channel;
         Mix_Chunk *sound = NULL;
-        sound = Mix_LoadWAV("test.wav");
+        sound = Mix_LoadWAV("Visphotak.wav");
         if(sound == NULL)
                 printf("Unable to load WAV file: %s\n", Mix_GetError());
 
@@ -298,6 +298,7 @@ void PlaySound()
         // Mix_FreeChunk(sound);
 }
 
+int ex[FIREWORKS] = {0};
 
 int drawScene()
 {
@@ -344,11 +345,19 @@ int drawScene()
 
         // Move the firework appropriately depending on its explosion state
         if (!fw[loop].hasExploded)
+        {
             fw[loop].move();
+            ex[loop] = 0;
+        }
         else
         {
             fw[loop].explode();
-            PlaySound();
+            // cout<<loop<<endl;
+            if(ex[loop] == 0)
+            {
+                PlaySound();
+                ex[loop] = 1;
+            }
         }
     }
 

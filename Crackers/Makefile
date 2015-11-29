@@ -1,8 +1,8 @@
 CC=g++
-CFLAGS=-lGL -lglut -lSDL
+CFLAGS=-lGL -lglut -lSDL -lSDL_mixer
 
-a.out:	Crackers.cpp
-	$(CC) Crackers.cpp $(CFLAGS)
+a.out:	Fireworks.cpp
+	$(CC) Fireworks.cpp $(CFLAGS)
 
 clean:
 	rm -f *.out
